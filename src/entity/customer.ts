@@ -2,32 +2,50 @@ class Customer {
 
     _id: string;
     _name: string;
-    _address: string;
+    _address: string = '';
+    _active: boolean = false;
 
-    constructor(id: string, name: string, address: string){
+    constructor(id: string, name: string){
         this._id = id;
         this._name = name;
-        this._address = address;
+        this.validate();
     }
 
-    get id(): string{
-        return this._id;
+    validate(){
+        this.validateId(this._id);
+        this.validateName(this._name);    
     }
 
-    get name(): string{
-        return this._name;
+    validateId(id: string){
+        if(id.length == 0){
+            throw new Error("Id is required");
+        }
     }
 
-    get address(): string{
-        return this._address;
+    validateName(name: string){
+        if(name.length == 0){
+            throw new Error("Name is required");
+        }
     }
 
-    set name(name: string){
+    validateAddres(address: string){
+        if(address.length == 0){
+            throw new Error("Address is required");
+        }
+    }
+
+    //intenção de negócio
+    changeName(name: string){
+        this.validateName(name);
         this._name = name;
     }
 
-    set address(address: string){
-        this._address = address;
+    activate() {
+        this.validateAddres(this._address);
+        this._active = true;
     }
 
+    deactivate() {
+        this._active = false;
+    }
 }
