@@ -1,8 +1,10 @@
+import Address from "./address";
+
 class Customer {
 
     _id: string;
     _name: string;
-    _address: string = '';
+    _address!: Address;
     _active: boolean = false;
 
     constructor(id: string, name: string){
@@ -17,21 +19,25 @@ class Customer {
     }
 
     validateId(id: string){
-        if(id.length == 0){
+        if(id.length === 0){
             throw new Error("Id is required");
         }
     }
 
     validateName(name: string){
-        if(name.length == 0){
+        if(name.length === 0){
             throw new Error("Name is required");
         }
     }
 
-    validateAddres(address: string){
-        if(address.length == 0){
+    validateAddres(){
+        if(this._address === undefined){
             throw new Error("Address is required");
         }
+    }
+
+    changeAddress(address: Address){
+        this._address = address;
     }
 
     //intenção de negócio
@@ -41,7 +47,7 @@ class Customer {
     }
 
     activate() {
-        this.validateAddres(this._address);
+        this.validateAddres();
         this._active = true;
     }
 
