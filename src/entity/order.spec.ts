@@ -26,17 +26,16 @@ describe("Order unit tests", () => {
     })
 
     it("should create order by constructor", () => {
-        let orderItem = new OrderItem("1", "Item 1", 100);
+        let orderItem = new OrderItem("1", "product1", "Item 1", 100, 2);
         let order = new Order("1", "c1", [orderItem]);
         expect(order).toBeInstanceOf(Order);
-        expect(order.getTotal()).toBe(100);
     })
 
     it("should calculate total", () => {
-        let orderItem = new OrderItem("1", "Item 1", 100);
-        let orderItem2 = new OrderItem("2", "Item 2", 150);
+        let orderItem = new OrderItem("1", "product1", "Item 1", 100, 2);
+        let orderItem2 = new OrderItem("1", "product2", "Item 2", 150, 2);
         let order = new Order("1", "c1", [orderItem, orderItem2]);
-        expect(order.getTotal()).toBe(250);
+        expect(order.getTotal()).toBe(500);
     })
 
 })

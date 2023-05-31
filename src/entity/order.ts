@@ -44,7 +44,7 @@ export default class Order{
     }
 
     ITotal(): number {
-        return this._itens.reduce((acc, item) => acc + item._price, 0);
+        return this._itens.reduce((acc, item) => acc + item.getTotal(), 0);
     }
 
 }
