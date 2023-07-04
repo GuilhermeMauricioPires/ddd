@@ -6,11 +6,20 @@ export default class Customer {
     private _name: string;
     private _address!: Address;
     private _active: boolean = false;
+    private _rewardPoints: number = 0;
 
     constructor(id: string, name: string){
         this._id = id;
         this._name = name;
         this.validate();
+    }
+
+    get id(): string{
+        return this._id;
+    }
+
+    get rewardPoints(): number{
+        return this._rewardPoints;
     }
 
     public getAddress(): Address{
@@ -62,4 +71,9 @@ export default class Customer {
     deactivate() {
         this._active = false;
     }
+
+    addRewardPoint(value: number){
+        this._rewardPoints += (value / 2);
+    }
+
 }
