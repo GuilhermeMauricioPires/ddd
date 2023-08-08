@@ -15,7 +15,7 @@ export default class OrderItem {
         this.validate();
     }
 
-    public getPrice():number{
+    get price():number{
         return this._price
     }
 

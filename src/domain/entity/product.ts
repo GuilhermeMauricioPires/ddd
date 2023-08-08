@@ -11,11 +11,11 @@ export default class Product{
         this.validate();
     }
 
-    getName(): string{
+    get name(): string{
         return this._name;
     }
 
-    getPrice(): number{
+    get price(): number{
         return this._price;
     }
 

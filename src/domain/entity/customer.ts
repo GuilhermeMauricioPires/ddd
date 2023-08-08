@@ -22,11 +22,11 @@ export default class Customer {
         return this._rewardPoints;
     }
 
-    public getAddress(): Address{
+    get address(): Address{
         return this._address
     }
 
-    public getActive(): boolean{
+    get active(): boolean{
         return this._active
     }
 

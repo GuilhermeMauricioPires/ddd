@@ -8,8 +8,8 @@ describe("Product service unit tests", () => {
         const product2 = new Product("p2", "Produto 2", 200);
         const products = [product1, product2];
         ProductService.increasePrice(products, 100);
-        expect(product1.getPrice()).toBe(200);
-        expect(product2.getPrice()).toBe(400);
+        expect(product1.price).toBe(200);
+        expect(product2.price).toBe(400);
     })
 
 });

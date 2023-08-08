@@ -29,12 +29,12 @@ describe("Product unit tests", () => {
     it("should change name", () => {
         let product = new Product("1", "Produto 1", 10);
         product.changeName("Produto 2");
-        expect(product.getName()).toBe("Produto 2");
+        expect(product.name).toBe("Produto 2");
     })
 
     it("should change price", () => {
         let product = new Product("1", "Produto 1", 10);
         product.changePrice(20);
-        expect(product.getPrice()).toBe(20);
+        expect(product.price).toBe(20);
     })
 })
