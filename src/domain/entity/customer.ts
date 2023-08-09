@@ -18,6 +18,10 @@ export default class Customer {
         return this._id;
     }
 
+    get name(): string{
+        return this._name;
+    }
+
     get rewardPoints(): number{
         return this._rewardPoints;
     }
