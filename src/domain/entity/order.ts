@@ -15,6 +15,18 @@ export default class Order{
         this.validate();
     }
 
+    get id(): string{
+        return this._id;
+    }
+
+    get customerId(): string {
+        return this._customerId;
+    }
+
+    get itens(): OrderItem[]{
+        return this._itens;
+    }
+
     public getTotal(): number{
         return this._total;
     }
