@@ -38,4 +38,29 @@ describe("Order unit tests", () => {
         expect(order.getTotal()).toBe(500);
     })
 
+    it("should update order item list by order", () => {
+        let orderItem = new OrderItem("1", "product1", "Item 1", 100, 2);
+        let order = new Order("1", "c1", [orderItem]);
+        expect(order).toBeInstanceOf(Order);
+        expect(order.itens.length).toBe(1);
+        expect(order.getTotal()).toBe(200);
+
+        let orderItem2 = new OrderItem("1", "product2", "Item 2", 150, 2);
+        order.changeItens([orderItem, orderItem2]);
+        expect(order.itens.length).toBe(2);
+        expect(order.getTotal()).toBe(500);
+    })
+
+    it("should throw erro when update order item with empy list", () => {
+        let orderItem = new OrderItem("1", "product1", "Item 1", 100, 2);
+        let order = new Order("1", "c1", [orderItem]);
+        expect(order).toBeInstanceOf(Order);
+        expect(order.itens.length).toBe(1);
+        expect(order.getTotal()).toBe(200);
+
+        expect(() => {
+            order.changeItens([]);
+        }).toThrowError("Itens are required")
+    })
+
 })

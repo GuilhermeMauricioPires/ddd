@@ -59,4 +59,10 @@ export default class Order{
         return this._itens.reduce((acc, item) => acc + item.getTotal(), 0);
     }
 
+    changeItens(itens: OrderItem[]){
+        this.validateItens(itens);
+        this._itens = itens; 
+        this._total = this.ITotal();   
+    }
+
 }
