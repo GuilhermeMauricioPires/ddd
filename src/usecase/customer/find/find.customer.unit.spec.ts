@@ -1,6 +1,3 @@
-import { Sequelize, UpdatedAt } from "sequelize-typescript";
-import CustomerModel from "../../../infrastructure/customer/repository/sequilize/customer.model";
-import CustomerRepository from "../../../infrastructure/customer/repository/sequilize/customer.repository";
 import Customer from "../../../domain/customer/entity/customer";
 import Address from "../../../domain/customer/value-object/address";
 import FindCustomerUseCase from "./find.customer.usecase";
