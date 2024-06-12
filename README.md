@@ -1,3 +1,9 @@
+# Clean Architecture
+
+12/06/2024 Desafio - Use cases para Product
+- Finalizado desafio e enviado para avaliação
+
+
 # ddd
 
 18/08/2023 Desafio - Implemente Domain Events de Customer
