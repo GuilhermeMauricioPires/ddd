@@ -1,5 +1,8 @@
 # Clean Architecture
 
+13/06/2024 Desafio - API de Products
+- Finalizado desafio e enviado para avaliação
+
 12/06/2024 Desafio - Use cases para Product
 - Finalizado desafio e enviado para avaliação
 
