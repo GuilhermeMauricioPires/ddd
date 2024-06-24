@@ -10,13 +10,19 @@ describe("Customer unit tests", () => {
     it("should throw erro when id is empty", () => {
         expect(() => {
             let customer = new Customer("", "Guilherme");
-        }).toThrowError("Id is required")        
+        }).toThrowError("customer: Id is required")        
     })
 
-    it("should throw erro when id is empty", () => {
+    it("should throw erro when name is empty", () => {
         expect(() => {
             let customer = new Customer("111", "");
-        }).toThrowError("Name is required")        
+        }).toThrowError("customer: Name is required")        
+    })
+
+    it("should throw erro when id and name are empty", () => {
+        expect(() => {
+            let customer = new Customer("", "");
+        }).toThrowError("customer: Id is required,customer: Name is required")        
     })
 
     it("should create customer by constructor", () => {
@@ -28,9 +34,9 @@ describe("Customer unit tests", () => {
 
     it("should throw erro when activate without address", () => {
         expect(() => {
-            let customer = new Customer("111", "Guilherme");
-            customer.activate();
+            let customer = new Customer("111", "Guilherme");            
             let spy = jest.spyOn(customer, 'validateAddres');
+            customer.activate();
             expect(spy).toHaveBeenCalledTimes(1);
         }).toThrowError("Address is required")                
     })
