@@ -2,7 +2,7 @@ import Entity from "../../@shared/entity/entity.abstract";
 import NotificationError from "../../@shared/notification/notification.error";
 import Address from "../value-object/address";
 
-export default class Customer extends Entity{
+export default class Customer extends Entity {
 
     private _name: string;
     private _address!: Address;
@@ -14,10 +14,7 @@ export default class Customer extends Entity{
         this._id = id;
         this._name = name;
         this.validate();
-
-        if(this.notification.hasErrors()){
-            throw new NotificationError(this.notification.getErrors());            
-        }
+        this.checkNotification();
     }
 
     get name(): string{
@@ -61,7 +58,10 @@ export default class Customer extends Entity{
 
     validateAddres(){
         if(this._address === undefined){
-            throw new Error("Address is required")
+            this.notification.addError({
+                context: "customer",
+                message: "Address is required"
+            })
         }
     }
 
@@ -72,11 +72,13 @@ export default class Customer extends Entity{
     //intenção de negócio
     changeName(name: string){
         this.validateName(name);
+        this.checkNotification();
         this._name = name;
     }
 
     activate() {
         this.validateAddres();
+        this.checkNotification();
         this._active = true;
     }
 

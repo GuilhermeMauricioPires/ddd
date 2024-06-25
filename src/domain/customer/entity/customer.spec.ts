@@ -38,7 +38,7 @@ describe("Customer unit tests", () => {
             let spy = jest.spyOn(customer, 'validateAddres');
             customer.activate();
             expect(spy).toHaveBeenCalledTimes(1);
-        }).toThrowError("Address is required")                
+        }).toThrowError("customer: Address is required")                
     })
 
     it("should create customer and add address", () => {

@@ -1,4 +1,5 @@
 import Notification from "../notification/notification";
+import NotificationError from "../notification/notification.error";
 
 export default abstract class Entity {
 
@@ -11,6 +12,12 @@ export default abstract class Entity {
 
     get id(){
         return this._id;
+    }
+
+    checkNotification(){
+        if(this.notification.hasErrors()){
+            throw new NotificationError(this.notification.getErrors());            
+        }
     }
 
 }
