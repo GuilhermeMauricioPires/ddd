@@ -25,6 +25,14 @@ describe("Customer unit tests", () => {
         }).toThrowError("customer: Id is required,customer: Name is required")        
     })
 
+    it("should throw erro when change empty name", () => {
+        let customer = new Customer("111", "Guilherme");
+        expect(() => {
+            customer.changeName("");
+        }).toThrowError("customer: Name is required")        
+                        
+    })
+
     it("should create customer by constructor", () => {
         let customer = new Customer("111", "Guilherme");
         // let spy = jest.spyOn(customer, 'validate');
