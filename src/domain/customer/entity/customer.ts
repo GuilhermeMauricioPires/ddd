@@ -35,7 +35,7 @@ export default class Customer extends Entity {
     }
 
     validate(){
-        CustomerValidatorFactory.create().validate(this);            
+        CustomerValidatorFactory.create().validate(this);
     }
 
     validateAddres(){
