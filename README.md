@@ -1,5 +1,11 @@
 # Clean Architecture
 
+26/06/2024 Desafio - Validação de Products
+- Finalizado desafio e enviado para avaliação
+
+25/06/2024 Desafio - Notification Pattern
+- Finalizado desafio e enviado para avaliação
+
 13/06/2024 Desafio - API de Products
 - Finalizado desafio e enviado para avaliação
 
